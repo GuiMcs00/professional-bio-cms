@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_shared_experience_items",
+  "info": {
+    "name": "ExperienceItem",
+    "icon": "briefcase",
+    "displayName": "Experience Item",
+    "description": "Individual experience item"
+  },
+  "options": {},
+  "attributes": {
+    "role": {
+      "type": "string",
+      "required": true
+    },
+    "company": {
+      "type": "string",
+      "required": true
+    },
+    "startDate": {
+      "type": "date"
+    },
+    "endDate": {
+      "type": "date"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

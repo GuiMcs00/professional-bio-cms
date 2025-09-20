@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_shared_projects",
+  "info": {
+    "name": "Projects",
+    "icon": "folder",
+    "displayName": "Projects",
+    "description": "Projects section component"
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.project-item"
+    }
+  }
+}

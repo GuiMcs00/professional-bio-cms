@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_shared_heroes",
+  "info": {
+    "name": "Hero",
+    "icon": "star",
+    "displayName": "Hero",
+    "description": "Hero section component"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "ctaText": {
+      "type": "string"
+    },
+    "ctaUrl": {
+      "type": "string"
+    }
+  }
+}
