@@ -1,0 +1,74 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: strapi
+      POSTGRES_USER: strapi
+      POSTGRES_PASSWORD: strapi
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - app-network
+
+  strapi:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    environment:
+      NODE_ENV: development
+      DATABASE_CLIENT: postgres
+      DATABASE_HOST: postgres
+      DATABASE_PORT: 5432
+      DATABASE_NAME: strapi
+      DATABASE_USERNAME: strapi
+      DATABASE_PASSWORD: strapi
+      JWT_SECRET: your-jwt-secret-change-this
+      ADMIN_JWT_SECRET: your-admin-jwt-secret-change-this
+      APP_KEYS: myKeyA,myKeyB,myKeyC,myKeyD
+      API_TOKEN_SALT: your-api-token-salt-change-this
+      TRANSFER_TOKEN_SALT: your-transfer-token-salt-change-this
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+      - strapi_uploads:/app/public/uploads
+    ports:
+      - "1337:1337"
+    depends_on:
+      - postgres
+    networks:
+      - app-network
+    command: npm run develop
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    environment:
+      NODE_ENV: development
+      STRAPI_URL: http://strapi:1337
+      NEXT_PUBLIC_STRAPI_URL: http://localhost:1337
+      NEXT_PUBLIC_SITE_URL: http://localhost:3000
+      STRAPI_PREVIEW_TOKEN: your-preview-token-change-this
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+      - /app/.next
+    ports:
+      - "3000:3000"
+    depends_on:
+      - strapi
+    networks:
+      - app-network
+    command: npm run dev
+
+volumes:
+  postgres_data:
+  strapi_uploads:
+
+networks:
+  app-network:
+    driver: bridge

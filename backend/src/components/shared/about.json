@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_abouts",
+  "info": {
+    "name": "About",
+    "icon": "user",
+    "displayName": "About",
+    "description": "About section component"
+  },
+  "options": {},
+  "attributes": {
+    "markdown": {
+      "type": "richtext",
+      "required": true
+    },
+    "highlights": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.highlight"
+    }
+  }
+}

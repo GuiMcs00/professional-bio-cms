@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_shared_skill_items",
+  "info": {
+    "name": "SkillItem",
+    "icon": "code",
+    "displayName": "Skill Item",
+    "description": "Individual skill item"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "level": {
+      "type": "integer",
+      "min": 0,
+      "max": 100,
+      "default": 50
+    },
+    "category": {
+      "type": "string"
+    }
+  }
+}

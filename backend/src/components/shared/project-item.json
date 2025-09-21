@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_shared_project_items",
+  "info": {
+    "name": "ProjectItem",
+    "icon": "folder",
+    "displayName": "Project Item",
+    "description": "Individual project item"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "url": {
+      "type": "string"
+    },
+    "repoUrl": {
+      "type": "string"
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "tags": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.highlight"
+    }
+  }
+}

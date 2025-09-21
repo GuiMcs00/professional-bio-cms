@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_shared_skills",
+  "info": {
+    "name": "Skills",
+    "icon": "code",
+    "displayName": "Skills",
+    "description": "Skills section component"
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.skill-item"
+    }
+  }
+}

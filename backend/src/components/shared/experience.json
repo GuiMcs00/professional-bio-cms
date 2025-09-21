@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_shared_experiences",
+  "info": {
+    "name": "Experience",
+    "icon": "briefcase",
+    "displayName": "Experience",
+    "description": "Experience section component"
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.experience-item"
+    }
+  }
+}
