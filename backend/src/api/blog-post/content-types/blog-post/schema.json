@@ -39,7 +39,10 @@
       "type": "datetime"
     },
     "author": {
-      "type": "string"
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::author.author",
+      "inversedBy": "articles"
     },
     "categories": {
       "type": "relation",
